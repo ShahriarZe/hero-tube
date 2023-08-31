@@ -4,7 +4,7 @@ const blog = blogButton = () => {
 }
 
 
-// ---All Category---
+// ---All Category Button---
 const handleAllCategory = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories')
     const data = await ((response).json())
@@ -21,6 +21,7 @@ const handleAllCategory = async () => {
 }
 handleAllCategory();
 
+// ---Display Card Function---
 const handleSingleCategory = async (elementId) => {
     const response = await fetch(` https://openapi.programming-hero.com/api/videos/category/${elementId}`)
     const data = await ((response).json())
@@ -36,7 +37,7 @@ const handleSingleCategory = async (elementId) => {
     <div class="card-body">
       <h2 class="card-title">${element.title}</h2>
       <p class="text-xl"> ${author}</p>
-      <p class="text-xl"> ${element.others.views}</p>
+      <p> ${element.others.views}</p>
     </div>
   </div>
     `
