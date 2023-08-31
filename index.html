@@ -24,8 +24,10 @@
 </head>
 
 <body>
+
+    <!-- Header Section -->
     <header>
-        <div class="navbar bg-base-100">
+        <div class="navbar bg-base-100 lg:mt-10 mb-5">
             <div class="navbar-start">
                 <img src="Logo.png" alt="">
             </div>
@@ -33,10 +35,25 @@
                 <a class="btn btn-ghost bg-gray-200 normal-case text-xl ml-4 lg:ml-0">Sort By View</a>
             </div>
             <div class="navbar-end">
-                <a class="btn btn-error normal-case text-xl text-white">Blog</a>
+                <a onclick="blogButton()" class="btn btn-error normal-case text-xl text-white">Blog</a>
             </div>
         </div>
+        <hr>
     </header>
+
+    <!-- Main Section -->
+    <main>
+        <div class="tab-conatiner mt-10 container mx-auto">
+            <div class="tabs tabs-boxed text-center flex justify-center gap-2 bg-white" id="tab-container">
+
+            </div>
+        </div>
+
+        <!-- Display Card -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 container mx-auto lg:mt-10" id="card-container">
+
+        </div>
+    </main>
 </body>
 
 <script src="script.js"></script>
