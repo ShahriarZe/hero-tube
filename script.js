@@ -30,12 +30,13 @@ const handleSingleCategory = async (elementId) => {
     cardConatiner.innerHTML = '';
     singleData.forEach(element => {
         const author = element.authors.map((authorName) => authorName.profile_name)
+        const authorImg = element.authors.map((authorImage) => authorImage.profile_picture)
         const div = document.createElement('div');
         div.innerHTML = `
     <div class="card card-compact lg:w-80  bg-base-100 shadow-xl">
-    <figure><img class="lg:w-full md:w-full lg:h-40 md:h-40" src="${element.thumbnail}" alt="Shoes" /></figure>
+    <figure><img class="w-full lg:w-full md:w-full lg:h-40 md:h-40" src="${element.thumbnail}" alt="Shoes" /></figure>
     <div class="card-body">
-      <h2 class="card-title">${element.title}</h2>
+      <h2 class="card-title"><img class="rounded-full w-[40px] h-[40px]" src="${authorImg}"/>${element.title}</h2>
       <p class="text-xl"> ${author}</p>
       <p> ${element.others.views}</p>
     </div>
