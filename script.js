@@ -6,7 +6,6 @@ const blog = blogButton = () => {
     location.href = 'blog.html'
 }
 
-
 // ---All Category Button---
 const handleAllCategory = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories')
@@ -42,6 +41,10 @@ const handleSingleCategory = async (elementId = 1000) => {
     drawingbox.innerHTML = '';
     if (drawingBtn) {
         singleData.forEach(element => {
+            const converTime = element.others.posted_date;
+            const timeMin = Math.floor((converTime % 3600) / 60)
+            const timeHour = Math.floor(converTime / 3600)
+            const timeNum =`${timeHour} hr ${timeMin} min ago`
             const author = element.authors.map((authorName) => authorName.profile_name)
             const authorImg = element.authors.map((authorImage) => authorImage.profile_picture)
             const div = document.createElement('div');
@@ -57,7 +60,8 @@ const handleSingleCategory = async (elementId = 1000) => {
             })
             div.innerHTML = `
         <div class="card card-compact lg:w-80  bg-base-100 shadow-xl">
-        <figure><img class="w-full lg:w-full md:w-full lg:h-40 md:h-40" src="${element.thumbnail}" alt="Shoes" /></figure>
+        <figure><div class="relative"><img class="w-full lg:w-[400px] md:w-full lg:h-40 md:h-40" src="${element.thumbnail}" alt="Shoes" /></div></figure>
+        ${converTime ? `<div class="absolute bg-slate-700 text-white text-sm rounded-lg top-[140px] lg:top-32 left-56 lg:left-48"><p>${timeNum}</p></div>`: ''}
         <div class="card-body">
           <h2 class="card-title"><img class="rounded-full w-[40px] h-[40px]" src="${authorImg}"/>${element.title}</h2>
           <div class="flex gap-2"> ${author}${authorTick}</div>
