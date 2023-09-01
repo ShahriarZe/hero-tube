@@ -58,8 +58,8 @@ const handleSingleCategory = async (elementId = 1000) => {
             // ---Card Content---
             div.innerHTML = `
         <div class="card card-compact lg:w-80  bg-base-100 shadow-xl">
-        <figure><div class="relative"><img class="w-full lg:w-[400px] md:w-full lg:h-40 md:h-40" src="${element.thumbnail}" alt="Shoes" /></div></figure>
-        ${convertTime ? `<div class="absolute bg-slate-700 text-white text-sm rounded-lg top-[140px] lg:top-32 left-56 lg:left-48"><p>${timeNum}</p></div>` : ''}
+        <figure><img class="relative w-full lg:w-[400px] md:w-[400px] lg:h-40 md:h-40" src="${element.thumbnail}" alt="Shoes" /></figure>
+        ${convertTime ? `<div class="absolute bg-slate-700 text-white text-sm rounded-lg mt-52 md:mt-32 lg:mt-32 right-0"><p>${timeNum}</p></div>` : ''}
         <div class="card-body">
           <h2 class="card-title"><img class="rounded-full w-[40px] h-[40px]" src="${authorImg}"/>${element.title}</h2>
           <div class="flex gap-2"> ${author}${authorTick}</div>
