@@ -32,7 +32,8 @@
                 <img src="Logo.png" alt="">
             </div>
             <div class="navbar-center">
-                <a class="btn btn-ghost bg-gray-200 normal-case text-xl ml-4 lg:ml-0">Sort By View</a>
+                <a onclick="  sortByView()" id="sort-button"
+                    class="btn btn-ghost bg-gray-200 normal-case text-xl ml-4 lg:ml-0">Sort By View</a>
             </div>
             <div class="navbar-end">
                 <a onclick="blogButton()" class="btn btn-error normal-case text-xl text-white">Blog</a>
@@ -52,8 +53,10 @@
         </div>
 
         <!-- Display Card -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 container mx-auto lg:mt-10"
-            id="card-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 container mx-auto mt-10" id="card-container">
+
+        </div>
+        <div id="drawing">
 
         </div>
     </main>
